@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .background{
+     background-color: rgb(78, 190, 255);
+  }
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    z-index: 3;
+    .menu {
+      cursor: pointer;
+      display: none;
+      margin-left: 2rem;
+      font-size: 0.8rem;
+      color: red;
+      transition: all 0.3s;
+      width: 2rem;
+      @media (max-width: 960px) {
+        display: flex;
+        flex-direction: column;
+      }
+      .bar {
+        width: 1.5rem;
+        height: 2px;
+        border-radius: 25%;
+        background-color: black;
+        margin-bottom: 0.4rem;
+        transition: all 0.3s;
+      }
+      .one {
+        transform: rotate(45deg);
+      }
+      .two {
+        transform: rotate(-45deg);
+      }
+    }
+    .logo {
+      width: 3rem;
+      object-fit: cover;
+      margin-left: 3rem;
+       @media (max-width: 960px) {
+        margin-left: 0rem;
+      }
+    }
+    .links {
+      display: flex;
+      align-items: center;
+      @media (max-width: 960px) {
+        display: none;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 1.5rem;
+        &:hover div {
+          width: 100%;
+        }
+        .select {
+          width: 100%;
+        }
+        div {
+          width: 0%;
+          background-color: royalblue;
+          height: 2px;
+          transition: all 0.5s;
+        }
+      }
+    }
+    .call {
+      font-size: 1.5rem;
+      margin-right: 3rem;
+    }
+  }
+  .drawer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-1rem);
+    background-color: rgb(78, 190, 255);
+    transition: all 1s;
+    opacity: 0;
+    z-index: -1;
+    .links {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  .show{
+    transform: translateY(0rem);
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+.h{ 
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
