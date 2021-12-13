@@ -38,7 +38,7 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${rotateBar && "fix"}`}>
       <div className="wrap">
         <div className="menu" onClick={handleBar}>
           <div className={`bar ${rotateBar && "one"}`}></div>

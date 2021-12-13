@@ -9,15 +9,14 @@ a {
   text-decoration: none;
   color: black;
 }
-
+ .fix{
+     position: fixed;
+  }
 .navbar {
   width: 100vw;
   display: flex;
   flex-direction: column;
   position: relative;
-  .background{
-     background-color: rgb(78, 190, 255);
-  }
   .wrap {
     display: flex;
     align-items: center;
@@ -114,10 +113,12 @@ a {
   }
 }
 
-.h{ 
-  background-color: red;
+.slider{ 
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(./assets/one.jpeg);
+  background-size: cover;
+  background-position: center ;
   height: 100vh;
 }

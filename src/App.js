@@ -1,13 +1,13 @@
 import './App.scss';
 import Navbar from './component/Navbar';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Drawer from './component/Drawer';
+import Slider from './component/Slider';
 
 function App() {
   return (
     <Router>
       <Navbar/>
-      <Drawer/>
+      <Slider/>
     </Router>
   );
 }
