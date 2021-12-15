@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
   font-family: "Poppins", sans-serif;
 }
@@ -9,20 +10,23 @@ a {
   text-decoration: none;
   color: black;
 }
- .fix{
-     position: fixed;
-  }
+.fixed {
+  position: fixed !important;
+  background-color: rgb(78, 190, 255);
+}
 .navbar {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  position: relative;
+  // position: relative;
   .wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 4rem;
+    width: 100vw;
     z-index: 3;
+    transition: all 0.1s ease-in;
     .menu {
       cursor: pointer;
       display: none;
@@ -54,7 +58,7 @@ a {
       width: 3rem;
       object-fit: cover;
       margin-left: 3rem;
-       @media (max-width: 960px) {
+      @media (max-width: 960px) {
         margin-left: 0rem;
       }
     }
@@ -99,26 +103,166 @@ a {
     background-color: rgb(78, 190, 255);
     transition: all 1s;
     opacity: 0;
-    z-index: -1;
+    z-index: -2;
     .links {
       display: flex;
       align-items: center;
       flex-direction: column;
     }
   }
-  .show{
+  .show {
     transform: translateY(0rem);
     opacity: 1;
     z-index: 2;
   }
 }
 
-.slider{ 
+// Slider
+.slider {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(./assets/one.jpeg);
-  background-size: cover;
-  background-position: center ;
+  flex-direction: column;
+  // overflow: hidden;
+  //  overflow-x: hidden;
+  .wrap {
+    display: flex;
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .one {
+      background: url(./assets/one.jpeg);
+      background-size: cover;
+      background-position: center;
+    }
+    .two {
+      background: url(./assets/two.jpeg);
+      background-size: cover;
+      background-position: center;
+    }
+    .three {
+      background: url(./assets/three.jpeg);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  .prev{
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+  }
+  .next{
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+  }
+}
+
+#root {
+  width: 100vw;
   height: 100vh;
 }
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+  height: 100%;
+  width: 100px;
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
+
+.carousel-item {
+  position: relative;
+  display: inline-block;
+  flex: 1;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+
+  transition: flex 1s ease;
+  
+  img {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  &.current {
+    flex: 1;
+  }
+}
+
+.carousel-heading {
+  display: inline-block;
+  position: relative;
+  background-color: #3498DB;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  
+  h2, h3 {
+    padding: 0 20px;
+    color: #ECF0F1;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel-prev::before {
+    position: relative;
+    top: 50%;
+    left: 20px;
+    content: '';
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    border-right: .7em solid white;
+    border-top: .7em solid white;
+    transform: rotate(225deg);
+  }
+
+  .carousel-next::before {
+    position: relative;
+    top: 50%;
+    right: -20px;
+    content: '';
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    border-right: .7em solid white;
+    border-top: .7em solid white;
+    transform: rotate(45deg);
+  }
+}
+

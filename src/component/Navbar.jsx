@@ -4,6 +4,17 @@ import logo from "../assets/mlogo.png";
 
 function Navbar() {
   const [rotateBar, setRotatebar] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+ window.addEventListener("scroll", ()=>{
+     if(window.scrollY > 100){
+         setScrolled(true)
+     }
+     if(window.scrollY < 100){
+         setScrolled(false)
+     }
+ })
+
 
   const select1 = useRef(null);
   const select2 = useRef(null);
@@ -38,8 +49,8 @@ function Navbar() {
   };
 
   return (
-    <div className={`navbar ${rotateBar && "fix"}`}>
-      <div className="wrap">
+    <div className={`navbar ${rotateBar && "fixed"}`}>
+      <div className={`wrap ${scrolled && "fixed"}`}>
         <div className="menu" onClick={handleBar}>
           <div className={`bar ${rotateBar && "one"}`}></div>
           <div className={`bar ${rotateBar && "two"}`}></div>
