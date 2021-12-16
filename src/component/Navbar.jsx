@@ -2,8 +2,7 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/mlogo.png";
 
-function Navbar() {
-  const [rotateBar, setRotatebar] = useState(false);
+function Navbar({handleBar, rotateBar}) {
   const [scrolled, setScrolled] = useState(false);
 
  window.addEventListener("scroll", ()=>{
@@ -15,14 +14,10 @@ function Navbar() {
      }
  })
 
-
   const select1 = useRef(null);
   const select2 = useRef(null);
   const select3 = useRef(null);
 
-  const handleBar = () => {
-    setRotatebar(!rotateBar);
-  };
   const handleLinkClick1 = () => {
     const div1 = select1.current;
     const div2 = select2.current;
@@ -49,8 +44,8 @@ function Navbar() {
   };
 
   return (
-    <div className={`navbar ${rotateBar && "fixed"}`}>
-      <div className={`wrap ${scrolled && "fixed"}`}>
+    <div className={`navbar ${scrolled && "fixed"}`}>
+      <div className={`wrap`}>
         <div className="menu" onClick={handleBar}>
           <div className={`bar ${rotateBar && "one"}`}></div>
           <div className={`bar ${rotateBar && "two"}`}></div>
@@ -74,9 +69,9 @@ function Navbar() {
       </div>
       <div className={`drawer ${rotateBar && "show"}`}>
         <div className="links">
-          <Link to={"/"}>Home</Link>
-          <Link to={"/"}>Office Spaces</Link>
-          <Link to={"/"}>About</Link>
+          <Link onClick={handleBar} to={"/"}>Home</Link>
+          <Link onClick={handleBar} to={"/"}>Office Spaces</Link>
+          <Link onClick={handleBar} to={"/"}>About</Link>
         </div>
       </div>
     </div>
