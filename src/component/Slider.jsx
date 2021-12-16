@@ -1,47 +1,48 @@
-import React, { useState, useEffect, useRef } from "react";
-import { sliderData as items } from "../sliderData";
-import { Link } from "react-router-dom";
+// import React, { useState, useEffect, useRef } from "react";
+// import { sliderData as items } from "../sliderData";
+// import { Link } from "react-router-dom";
 
-function Slider() {
-  const [counter, setCounter] = useState(0);
-  const [timeout, setTimeOut] = useState(null);
+// function Slider() {
+//   const [x, setX] = useState(0);
 
-  const timeoutTime = 3;
+//   console.log(items.length);
+//   // setInterval(()=>{
+//   //   setX(x-100);
+//   //   if(x === ((items.length -1) * 100)){
+//   //     setX(x+100)
+//   //   }
+//   // },5000)
+//   const nextItem = () => {
+//     x === -100 * (items.length - 1)
+//       ? setX(0)
+//       : setX(x - 100);
+//   };
+//   const prevItem = () => {
+//     x === 0 ? setX(-100 * (items.length - 1)) : setX(x + 100);
+//   };
 
-  console.log(items.length);
-  const prevItem = () => {
-    var prevItem = counter - 1 < 0 ? items.lenght - 1 : counter - 1;
-    clearTimeout(timeout);
-    setCounter(prevItem);
-    setTimeOut(() => {
-      setTimeout(nextItem, timeoutTime);
-    });
-  };
-  const nextItem = () => {
-    var prevItem = counter + 1 < items.length ? counter + 1 : 0;
-    clearTimeout(timeout);
-    setCounter(nextItem);
-    setTimeOut(() => {
-      setTimeout(nextItem, timeoutTime);
-    });
-  };
+// // -100 * (items.length - 1);
+//   return (
+//     <div className="slider">
+//       <div className="button-wrap">
+//         <div className="carousel-prev" onClick={prevItem}>
+//           <i class="fad fa-arrow-alt-left"></i>
+//         </div>
+//         <div className="carousel-next" onClick={nextItem}>
+//           <i class="fad fa-arrow-alt-right"></i>
+//         </div>
+//       </div>
+//       {items.map((item, index) => {
+//         return (
+//           <div key={index} className="slide" style={{transform: `translateX(${x}%)`}}>
+//             <img src={item.image} alt="" />
+//             <div className="title">{item.title}</div>
+//             <div className="text">{item.text}</div>
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// }
 
-  return (
-    <div className="slider">
-      {items.map((item) => {
-        return (
-          <div className="carousel">
-            <div className="carousel-prev"></div>
-            <div key={counter} className=".carousel-item ">
-              <img src={item.image} alt="" />
-              <div className="carousel-heading"></div>
-            </div>
-            <div className="carousel-next"></div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-export default Slider;
+// export default Slider;
