@@ -160,7 +160,7 @@ function Home() {
           <div className="left">
             <div className="content-wrap">
               <h1>
-                Lets find you your <br /> dream office
+                Let's find you your <br /> dream office
               </h1>
               <div className="icon-wrap">
                 <a href="http://twitter.com">
