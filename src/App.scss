@@ -14,6 +14,9 @@ body {
 
 @import "~bootstrap/scss/bootstrap";
 
+//  Variables
+$primary-color: #4ebeff;
+
 // General Classes
 
 a {
@@ -21,7 +24,7 @@ a {
 }
 .fixed {
   // position: fixed !important;
-  background-color: rgb(78, 190, 255) !important;
+  background-color: $primary-color !important;
   top: 0;
 }
 .sub-heading {
@@ -37,7 +40,7 @@ a {
   span {
     font-weight: 800;
     font-size: 3rem;
-    color: rgb(78, 190, 255);
+    color: $primary-color;
     transition: all 0.5s;
     &:hover {
       color: royalblue;
@@ -149,7 +152,7 @@ a {
     align-items: center;
     justify-content: center;
     transform: translateY(-1rem);
-    background-color: rgb(78, 190, 255);
+    background-color: $primary-color;
     transition: all 0.5s;
     opacity: 0;
     z-index: -2;
@@ -221,11 +224,11 @@ a {
         top: 20%;
       }
       h1 {
-        font-size: 4.6rem;
+        font-size: 4rem;
         font-weight: 700;
         text-align: left;
         span {
-          color: rgb(78, 190, 255);
+          color: $primary-color;
           transition: all 0.5s;
           &:hover {
             color: royalblue;
@@ -256,7 +259,7 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgb(78, 190, 255);
+        background-color: $primary-color;
         border-radius: 35px;
         cursor: pointer;
         transition: all 0.5s;
@@ -314,7 +317,7 @@ a {
         .text {
           margin-bottom: 1rem;
           a {
-            color: rgb(78, 190, 255);
+            color: $primary-color;
             transition: all 0.5s;
             &:hover {
               color: royalblue;
@@ -424,11 +427,11 @@ a {
           }
           .arrw {
             margin-left: 0.5rem;
-            color: rgb(78, 190, 255);
+            color: $primary-color;
           }
           .text {
             a {
-              color: rgb(78, 190, 255);
+              color: $primary-color;
               transition: all 0.5s;
               &:hover {
                 color: royalblue;
@@ -459,7 +462,7 @@ a {
         align-items: center;
         justify-content: center;
         width: 100%;
-        margin-bottom: 2rem;
+        // margin-bottom: 2rem;
       }
     }
     .right {
@@ -473,7 +476,7 @@ a {
         width: 100%;
         height: fit-content;
         // justify-content: flex-start;
-        margin-bottom: 2rem;
+        // margin-bottom: 2rem;
       }
     }
   }
@@ -545,6 +548,128 @@ a {
   .left {
     .text-wrap {
       margin-left: 0rem !important;
+    }
+  }
+}
+// Footer
+.footer {
+  background-color: rgb(62, 78, 126);
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  width: 100vw;
+  margin-top: 4rem;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    margin-top: 2rem;
+    height: fit-content;
+    padding: 4rem 0;
+  }
+  .left {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @media (max-width: 960px) {
+      width: 100vw;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .content-wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 60%;
+      margin-left: 5rem;
+      @media (max-width: 960px) {
+        width: 90%;
+         height: 22vh;
+        margin-left: 0;
+      }
+      h1 {
+        color: white;
+        font-size: 2.4rem;
+          @media (max-width: 960px) {
+       font-size: 1.8rem;
+      }
+      }
+      .icon-wrap {
+        display: flex;
+        align-items: center;
+        a {
+          margin-right: 1rem;
+          color: $primary-color;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .right {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @media (max-width: 960px) {
+      width: 100vw;
+      justify-content: center;
+    }
+    .text-wrap {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      height: 60%;
+      justify-content: space-between;
+      @media (max-width: 960px) {
+        width: 90%;
+        height: 35vh;
+      }
+      .text {
+        color: white;
+        font-weight: 600;
+      }
+      .sub-heading {
+        display: flex;
+        align-items: center;
+        color: white;
+        height: 2rem;
+      }
+      .icon-wrap {
+        display: flex;
+        align-items: center;
+        .txt {
+          @extend .text;
+          margin-right: 1rem;
+          font-size: 0.9rem;
+          width: 5.5vw;
+          color: $primary-color;
+             @media (max-width: 1260px) {
+             width: 7.3vw;
+          }
+             @media (max-width: 960px) {
+             width: 10vw;
+          }
+             @media (max-width: 400px) {
+             width: 25vw;
+          }
+        }
+        .icon {
+          display: flex;
+          align-items: flex-start;
+          .text {
+            font-size: 0.8rem;
+            @media (max-width: 1260px) {
+              max-width: 300px;
+              text-align: left;
+            }
+          }
+          i {
+            margin-right: 0.5rem;
+            color: white;
+            font-size: 1.2rem;
+          }
+        }
+      }
     }
   }
 }

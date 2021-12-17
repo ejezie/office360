@@ -126,7 +126,7 @@ function Home() {
           <div className="left">
             <div className="text-wrap">
               <div className="sub-heading">
-                Explore our beatiful offices <span>.</span>
+                Become more productive <span>.</span>
               </div>
               <div className="text">
                 Our fully serviced private office spaces give teams of all sizes
@@ -153,6 +153,64 @@ function Home() {
           <div className="right">
             <div className="img-wrap">
               <img src={imagefourteen} alt="office" />
+            </div>
+          </div>
+        </section>
+        <section className="footer">
+          <div className="left">
+            <div className="content-wrap">
+              <h1>
+                Lets find you your <br /> dream office
+              </h1>
+              <div className="icon-wrap">
+                <a href="http://twitter.com">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="http://instgram.com">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="http://facebook.com">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="http://linkedin.com">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="right">
+            <div className="text-wrap">
+              <div className="sub-heading">
+                Contact us <span>!</span>
+              </div>
+              <div className="icon-wrap">
+                {/* <div className="txt">Email :</div> */}
+                <div className="icon">
+                  <i class="far fa-envelope-open"></i>
+                  <a className="text" href="mailto:shady07@gmail.com">
+                    office@office360.com
+                  </a>
+                </div>
+              </div>
+              <div className="icon-wrap">
+                {/* <div className="txt">Phone :</div> */}
+                <div className="icon">
+                  <i class="fas fa-phone-alt"></i>
+                  <a className="text" href="tel:08142074224">
+                    +10166352672
+                  </a>
+                </div>
+              </div>
+              <div className="icon-wrap">
+                {/* <div className="txt">Address :</div> */}
+                <div className="icon">
+                  <i class="fal fa-map-marker-alt"></i>
+                  <div className="text">
+                    Western House, 10th Floor, 8-10 Broad St, Lagos Island
+                    101301, Lagos
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

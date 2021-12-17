@@ -28,7 +28,7 @@ function CarouselComp({ rotateBar }) {
         <img className="d-block w-100" src={imageone} alt="Second slide" />
         <Carousel.Caption className="text">
           <h1>
-            Work your way<span>.</span>
+            Show your identity<span>.</span>
           </h1>
           <p>
             Our global network of workspaces enable you to work wherever you
@@ -45,7 +45,7 @@ function CarouselComp({ rotateBar }) {
         <img className="d-block w-100" src={imageeight} alt="Third slide" />
         <Carousel.Caption className="text">
           <h1>
-            Work your way<span>.</span>
+            Choose your growth<span>.</span>
           </h1>
           <p>
             Our global network of workspaces enable you to work wherever you
