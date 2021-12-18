@@ -26,16 +26,28 @@ function CarouselComp({ rotateBar }) {
       <Carousel.Item interval={5000} id="carousel-item">
         <img className="d-block w-100" src={imagethirteen} alt="First slide" />
         <Carousel.Caption className="text">
-          <h1 ref={ref} className={`reveal-up ${inView && "up1"}`}>
+          <h1
+            ref={ref}
+            style={{ animationDelay: "1s" }}
+            className={`reveal ${inView && "uphero"}`}
+          >
             Work your way<span>.</span>
           </h1>
-          <p ref={ref} className={`reveal-up ${inView && "up2"}`}>
+          <p
+            ref={ref}
+            style={{ animationDelay: "1.3s" }}
+            className={`reveal ${inView && "uphero"}`}
+          >
             Our global network of workspaces enable you to work wherever you
             need to be, in a productive, professional environment. Create a
             workplace that’s right for your business today – and tomorrow – and
             thrive among a global business community.
           </p>
-          <div ref={ref} className={`btn reveal-up ${inView && "up3"}`}>
+          <div
+            ref={ref}
+            style={{ animationDelay: "1.5s" }}
+            className={`btn reveal ${inView && "uphero"}`}
+          >
             <a href="tel:08142074224">Call Us</a>
           </div>
         </Carousel.Caption>
@@ -43,16 +55,28 @@ function CarouselComp({ rotateBar }) {
       <Carousel.Item interval={5000} id="carousel-item">
         <img className="d-block w-100" src={imageone} alt="Second slide" />
         <Carousel.Caption className="text">
-          <h1 ref={ref1} className={`reveal-up ${inView1 && "up1"}`}>
+          <h1
+            ref={ref1}
+            style={{ animationDelay: "1s" }}
+            className={`reveal ${inView1 && "uphero"}`}
+          >
             Show your identity<span>.</span>
           </h1>
-          <p ref={ref1} className={`reveal-up ${inView1 && "up2"}`}>
+          <p
+            ref={ref1}
+            style={{ animationDelay: "1.3s" }}
+            className={`reveal ${inView1 && "uphero"}`}
+          >
             Our global network of workspaces enable you to work wherever you
             need to be, in a productive, professional environment. Create a
             workplace that’s right for your business today – and tomorrow – and
             thrive among a global business community.
           </p>
-          <div ref={ref1} className={`btn reveal-up ${inView1 && "up3"}`}>
+          <div
+            ref={ref1}
+            style={{ animationDelay: "1.5s" }}
+            className={`btn reveal ${inView1 && "uphero"}`}
+          >
             <a href="tel:08142074224">Call Us</a>
           </div>
         </Carousel.Caption>
@@ -60,10 +84,18 @@ function CarouselComp({ rotateBar }) {
       <Carousel.Item interval={5000} id="carousel-item">
         <img className="d-block w-100" src={imageeight} alt="Third slide" />
         <Carousel.Caption className="text">
-          <h1 ref={ref2} className={`reveal-up ${inView2 && "up1"}`}>
+          <h1
+            ref={ref2}
+            style={{ animationDelay: "1s" }}
+            className={`reveal ${inView2 && "uphero"}`}
+          >
             Choose your growth<span>.</span>
           </h1>
-          <p ref={ref2} className={`reveal-up ${inView2 && "up2"}`}>
+          <p
+            ref={ref2}
+            style={{ animationDelay: "1.3s" }}
+            className={`reveal ${inView2 && "uphero"}`}
+          >
             Our global network of workspaces enable you to work wherever you
             need to be, in a productive, professional environment. Create a
             workplace that’s right for your business today – and tomorrow – and
@@ -71,7 +103,8 @@ function CarouselComp({ rotateBar }) {
           </p>
           <div
             ref={ref2}
-            className={`btn reveal-up ${inView2 && "up3"}`}
+            style={{ animationDelay: "1.5s" }}
+            className={`btn reveal ${inView2 && "uphero"}`}
           >
             <a href="tel:08142074224">Call Us</a>
           </div>

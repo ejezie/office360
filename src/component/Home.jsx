@@ -9,13 +9,13 @@ import imagefourteen from "../assets/fourteen.jpg";
 
 function Home() {
   const options1 = {
-    rootMargin: "400px 0px 0px 0px",
-    treshold: 0.2,
+    rootMargin: "0px",
+    threshold: 0.5,
     root: null,
   };
   const options = {
     rootMargin: "0px",
-    treshold: 1,
+    threshold: 0.2,
     root: null,
   };
 
@@ -26,6 +26,7 @@ function Home() {
   const [ref4, inView4] = useInView(options);
   const [ref5, inView5] = useInView(options);
   const [ref6, inView6] = useInView(options);
+  const [ref7, inView7] = useInView(options);
 
   return (
     <div className="home">
@@ -34,11 +35,16 @@ function Home() {
           <div className="text-wrap">
             <div
               ref={ref}
-              className={`sub-heading reveal-up ${inView && "upone"}`}
+              className={`sub-heading reveal ${inView && "up"}`}
+              style={{ animationDelay: "0.2s" }}
             >
               Explore our beatiful offices <span>.</span>
             </div>
-            <div ref={ref} className={`text reveal-up ${inView && "uptwo"}`}>
+            <div
+              ref={ref}
+              className={`text reveal ${inView && "up"}`}
+              style={{ animationDelay: "0.4s" }}
+            >
               Our fully serviced private office spaces give teams of all sizes
               an inspiring environment to focus, collaborate, and do their best
               work.
@@ -46,7 +52,8 @@ function Home() {
             <div className="icon-wrap">
               <div
                 ref={ref}
-                className={`icon reveal-up ${inView && "upthree"}`}
+                className={`icon reveal ${inView && "up"}`}
+                style={{ animationDelay: "0.6s" }}
               >
                 <i class="fal fa-chair-office"></i>
                 <div className="text">
@@ -55,7 +62,8 @@ function Home() {
               </div>
               <div
                 ref={ref}
-                className={`icon reveal-left ${inView && "leftfour"}`}
+                style={{ animationDelay: "1.5s" }}
+                className={`icon reveal ${inView && "left"}`}
               >
                 <i class="fal fa-mobile-android"></i>
                 <div className="text">
@@ -70,17 +78,22 @@ function Home() {
           <div className="img-wrap">
             <img
               ref={ref1}
-              className={`reveal-scale ${inView1 && "scaleone"}`}
+              style={{ animationDelay: "0.8s" }}
+              className={`reveal ${inView1 && "scale"}`}
               src={siximage}
               alt="office"
             />
           </div>
         </div>
       </section>
-      <section className="home-two reveal">
+
+      {/* Home two */}
+
+      <section className="home-two">
         <div
           ref={ref3}
-          className={`sub-heading reveal-up ${inView3 && "upone"}`}
+          style={{ animationDelay: "0.2s" }}
+          className={`sub-heading reveal ${inView3 && "up"}`}
         >
           View our new offices <span>.</span>
         </div>
@@ -89,13 +102,15 @@ function Home() {
             <div className="content" id="one">
               <img
                 src={imageten}
+                style={{ animationDelay: "0.8s" }}
                 ref={ref3}
-                className={`reveal-scale ${inView3 && "scaletwo"}`}
+                className={`reveal ${inView3 && "scale"}`}
                 alt="office"
               />
               <div
                 ref={ref3}
-                className={`icon-wrap reveal-left ${inView3 && "leftone"}`}
+                style={{ animationDelay: "1.5s" }}
+                className={`icon-wrap reveal ${inView3 && "left"}`}
               >
                 <div className="icon">
                   <Link to={"/"} className="icon">
@@ -117,13 +132,15 @@ function Home() {
             <div className="content" id="two">
               <img
                 src={imagefive}
-                ref={ref4}
-                className={`reveal-scale ${inView4 && "scalethree"}`}
+                style={{ animationDelay: "0.8s" }}
+                ref={ref2}
+                className={`reveal ${inView2 && "scale"}`}
                 alt="office"
               />
               <div
-                ref={ref4}
-                className={`icon-wrap reveal-left ${inView4 && "leftone"}`}
+                ref={ref2}
+                style={{ animationDelay: "1.5s" }}
+                className={`icon-wrap reveal ${inView2 && "left"}`}
               >
                 <Link to={"/"} className="icon">
                   <div className="text">View More</div>
@@ -141,25 +158,48 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Home Three */}
+
       <section className="home-one" id="home-three">
         <div className="left">
-          <div className="text-wrap">
-            <div className="sub-heading">
+          <div
+            ref={ref4}
+            style={{ animationDelay: "1.5s" }}
+            className={`text-wrap reveal ${inView4 && "right"}`}
+          >
+            <div
+              ref={ref4}
+              style={{ animationDelay: "0.9s" }}
+              className={`sub-heading reveal ${inView4 && "up"}`}
+            >
               Choose your workspace<span>.</span>
             </div>
-            <div className="text">
+            <div
+              ref={ref4}
+              style={{ animationDelay: "1.1s" }}
+              className={`text reveal ${inView4 && "up"}`}
+            >
               Our fully serviced private office spaces give teams of all sizes
               an inspiring environment to focus, collaborate, and do their best
               work.
             </div>
             <div className="icon-wrap">
-              <div className="icon">
+              <div
+                ref={ref4}
+                style={{ animationDelay: "1.3s" }}
+                className={`icon reveal ${inView4 && "up"}`}
+              >
                 <i class="fal fa-chair-office"></i>
                 <div className="text">
                   Personalize your workspace to your needs
                 </div>
               </div>
-              <div className="icon">
+              <div
+                ref={ref4}
+                style={{ animationDelay: "1.5s" }}
+                className={`icon reveal ${inView4 && "up"}`}
+              >
                 <i class="fal fa-mobile-android"></i>
                 <div className="text">
                   {" "}
@@ -170,30 +210,54 @@ function Home() {
           </div>
         </div>
         <div className="right">
-          <div className="img-wrap">
+          <div
+            ref={ref5}
+            style={{ animationDelay: "1.5s" }}
+            className={`img-wrap reveal ${inView5 && "left"}`}
+          >
             <img src={imagenine} alt="office" />
           </div>
         </div>
       </section>
+
+      {/* Home Four */}
+
       <section className="home-one" id="home-four">
         <div className="left">
           <div className="text-wrap">
-            <div className="sub-heading">
+            <div
+              ref={ref6}
+              className={`sub-heading reveal ${inView6 && "up"}`}
+              style={{ animationDelay: "0.2s" }}
+            >
+              {" "}
               Become more productive <span>.</span>
             </div>
-            <div className="text">
+            <div
+              ref={ref6}
+              className={`text reveal ${inView6 && "up"}`}
+              style={{ animationDelay: "0.4s" }}
+            >
               Our fully serviced private office spaces give teams of all sizes
               an inspiring environment to focus, collaborate, and do their best
               work.
             </div>
             <div className="icon-wrap">
-              <div className="icon">
+              <div
+                ref={ref6}
+                className={`icon reveal ${inView6 && "up"}`}
+                style={{ animationDelay: "0.6s" }}
+              >
                 <i class="fal fa-chair-office"></i>
                 <div className="text">
                   Personalize your workspace to your needs
                 </div>
               </div>
-              <div className="icon">
+              <div
+                ref={ref6}
+                className={`icon reveal ${inView6 && "left"}`}
+                style={{ animationDelay: "1.5s" }}
+              >
                 <i class="fal fa-mobile-android"></i>
                 <div className="text">
                   {" "}
@@ -205,10 +269,19 @@ function Home() {
         </div>
         <div className="right">
           <div className="img-wrap">
-            <img src={imagefourteen} alt="office" />
+            <img
+              ref={ref7}
+              className={`reveal ${inView7 && "scale"}`}
+              style={{ animationDelay: "0.8s" }}
+              src={imagefourteen}
+              alt="office"
+            />
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+
       <section className="footer">
         <div className="left">
           <div className="content-wrap">

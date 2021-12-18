@@ -332,9 +332,16 @@ a {
           }
         }
         .icon-wrap {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
           .icon {
             display: flex;
             align-items: center;
+            @media (max-width: 960px) {
+              width: 90%;
+              justify-content: flex-start;
+            }
             i {
               margin-right: 1rem;
               margin-bottom: 1rem;
@@ -425,6 +432,9 @@ a {
         }
       }
       .icon-wrap {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
         margin-top: 0.7rem;
         .icon {
           display: flex;
@@ -509,6 +519,7 @@ a {
       background-color: white;
       padding-left: 2rem;
       height: 50vh;
+      width: 95%;
       @media (max-width: 960px) {
         width: 90%;
       }
@@ -677,106 +688,74 @@ a {
     }
   }
 }
+// Intersection observer
 
-//Observer Animations
-// slider animation
-.up1{
-  opacity: 1!important;
-  transition: all 0.9s 0.5s linear !important;
-  transform: translateY(0px)!important;
-}
-.up2{
-  opacity: 1!important;
-  transition: all 0.9s 1s linear!important;
-  transform: translateY(0px)!important;
-}
-.up3{
-  opacity: 1 !important;
-  transition: all 0.9s 1.4s linear!important;
-  transform: translateY(0px)!important;
-}
-// up animation
-.reveal-up{
+.reveal {
   opacity: 0;
-  transform: translateY(50px);
+  transition: all 0.3s linear;
 }
-.upone{
-  opacity: 1!important;
-  transition: all 0.5s 0.2s linear !important;
-  transform: translateY(0px)!important;
+
+.up {
+  opacity: 1;
+  transition: all 1s 0.8s linear;
+  animation: moveup 1s linear;
 }
-.uptwo{
-  opacity: 1!important;
-  transition: all 0.5s 0.4s linear!important;
-  transform: translateY(0px)!important;
+.uphero {
+  opacity: 1;
+  transition: all 1s 1.8s linear !important;
+  animation: moveup 1.4s ease-in-out;
 }
-.upthree{
-  opacity: 1 !important;
-  transition: all 0.5s 0.6s linear!important;
-  transform: translateY(0px)!important;
+
+.left {
+  opacity: 1;
+  transition: all 0.4s 1.5s linear;
+  animation: moveleft 0.4s linear;
 }
-// Right Animation
-.reveal-right{
-  opacity: 0;
-  transform: translateX(-50px);
+
+.scale {
+  opacity: 1;
+  transition: all 0.8s 0.8s linear;
+  animation: scale 0.8s linear;
 }
-.rightone{
-  opacity: 1!important;
-  transition: all 0.5s 0.2s linear !important;
-  transform: translateX(0px)!important;
+
+.right {
+  opacity: 1;
+  transition: all 0.4s 1.5s linear;
+  animation: moveright 0.4s linear;
 }
-.righttwo{
-  opacity: 1!important;
-  transition: all 0.5s 0.4s linear !important;
-  transform: translateX(0px)!important;
+
+@keyframes moveup {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
-.rightthree{
-  opacity: 1 !important;
-  transition: all 0.5s 0.6s linear !important;
-  transform: translateX(0px)!important;
+
+@keyframes moveleft {
+  0% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
-// Left Animation
-.reveal-left{
-  opacity: 0;
-  transform: translateX(50px);
+
+@keyframes moveright {
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
-.leftone{
-  opacity: 1!important;
-  transition: all 0.5s 1s linear !important;
-  transform: translateX(0px)!important;
-}
-.lefttwo{
-  opacity: 1!important;
-  transition: all 0.5s!important;
-  transform: translateX(0px)!important;
-}
-.leftthree{
-  opacity: 1 !important;
-  transition: all 0.5s !important;
-  transform: translateX(0px)!important;
-}
-.leftfour{
-  opacity: 1 !important;
-  transition: all 0.5s 1s linear !important;
-  transform: translateX(0px)!important;
-}
-// Scale Animation
-.reveal-scale{
-  opacity: 0;
-  transform: Scale(1.2);
-}
-.scaleone{
-  opacity: 1!important;
-  transition: all 1s 2.5s linear!important;
-  transform: Scale(1)!important;
-}
-.scaletwo{
-  opacity: 1!important;
-  transition: all 1s 0.5s !important;
-  transform: Scale(1)!important;
-}
-.scalethree{
-  opacity: 1 !important;
-  transition: all 1s 0.1s !important;
-  transform: Scale(1)!important;
+
+@keyframes scale {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
